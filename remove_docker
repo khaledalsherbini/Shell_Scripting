@@ -1,0 +1,29 @@
+
+remove_docker() {
+
+docker -v  &> /dev/null 
+if [ $? != 0 ] 
+then 
+  echo "Docker has been removed already" 
+
+else
+  
+sudo systemctl stop docker 
+sudo systemctl stop containerd 
+
+sudo apt purge -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin 
+
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd 
+sudo rm -rf /etc/docker 
+
+sudo rm -f /etc/apt/sources.list.d/docker.list 
+sudo rm -f /etc/apt/sources.list.d/docker.sources 
+
+sudo rm -f /etc/apt/keyrings/docker.gpg
+sudo rm -f /etc/apt/keyrings/docker.asc 
+
+sudo apt update
+
+fi
+} 

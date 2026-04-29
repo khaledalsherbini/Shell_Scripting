@@ -1,0 +1,24 @@
+#!/bin/bash 
+   
+source /home/khaled/Git_hub/Shell_Scripting/install_docker
+source /home/khaled/Git_hub/Shell_Scripting/remove_docker 
+
+echo "1) Install Docker"
+echo "2) Remove Docker" 
+
+read choice 
+
+case $choice in 
+   1) install_docker ;; 
+
+   2) remove_docker ;;
+
+   *) echo "wrong choice" ;;
+esac   
+    
+
+
+
+ 
+ 
+    

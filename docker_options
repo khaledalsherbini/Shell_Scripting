@@ -1,7 +1,7 @@
 #!/bin/bash 
    
-source /home/khaled/Git_hub/Shell_Scripting/install_docker
-source /home/khaled/Git_hub/Shell_Scripting/remove_docker 
+source $PWD/install_docker
+source $PWD/remove_docker 
 
 echo "1) Install Docker"
 echo "2) Remove Docker" 
